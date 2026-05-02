@@ -1,0 +1,69 @@
+.presentation-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  z-index: 10;
+}
+
+/* Floating Navigation Controls */
+.presentation-nav {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  gap: 16px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Progress indicator */
+.presentation-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--color-accent);
+  z-index: 100;
+  transition: width 0.3s ease;
+}
+
+.slide-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

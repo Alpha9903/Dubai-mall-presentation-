@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Cinzel", serif;
+  --font-sans: "Inter", "Montserrat", sans-serif;
+  
+  --color-luxury-pearl: #FAFAFA;
+  --color-luxury-dark: #1A1A1A;
+  --color-luxury-gold: #CBA153;
+  --color-luxury-gold-muted: rgba(203, 161, 83, 0.5);
+  --color-luxury-grey: #E5E5E5;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--color-luxury-pearl);
+    color: var(--color-luxury-dark);
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Texture overlay for luxury pearl feel */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.03%22/%3E%3C/svg%3E');
+  pointer-events: none;
+  z-index: 50;
+  mix-blend-mode: multiply;
+}
